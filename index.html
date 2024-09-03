@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白板小工具</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 3s ease-in forwards;
+            animation-delay: 1s;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            animation: fadeInUp 2s ease-in forwards;
+            animation-delay: 2s;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(100px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating:nth-child(1) {
+            left: 20%;
+            animation-duration: 4s;
+        }
+
+        .floating:nth-child(2) {
+            left: 50%;
+            animation-duration: 6s;
+        }
+
+        .floating:nth-child(3) {
+            left: 70%;
+            animation-duration: 8s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+
+    <div class="container">
+        <h1>欢迎来到白板小工具</h1>
+        <p>简单、快捷、实用的工具</p>
+        <a href="lasted.exe" download class="download-button">下载最新版</a>
+    </div>
+</body>
+</html>
