@@ -10,31 +10,36 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
         }
 
         .container {
             text-align: center;
             color: #333;
+            margin-top: 50px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .intro {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
         }
 
         h1 {
             font-size: 3em;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
+            margin-bottom: 10px;
         }
 
-        p {
+        h3 {
             font-size: 1.5em;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeIn 3s ease-in forwards;
-            animation-delay: 1s;
+            margin-bottom: 20px;
+            color: #555;
         }
 
         .download-button {
@@ -48,15 +53,51 @@
             text-decoration: none;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(100px);
-            opacity: 0;
-            animation: fadeInUp 2s ease-in forwards;
-            animation-delay: 2s;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.5s ease-in forwards;
+            animation-delay: 0s;
         }
 
         .download-button:hover {
             background-color: #0056b3;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @media(min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .box {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            flex: 1;
+            margin-right: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .box:last-child {
+            margin-right: 0;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         @keyframes fadeIn {
@@ -65,7 +106,7 @@
         }
 
         @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(100px); }
+            0% { opacity: 0; transform: translateY(50px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
@@ -76,28 +117,45 @@
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
+            top: -60px;
         }
 
         .floating:nth-child(1) {
             left: 20%;
-            animation-duration: 4s;
+            animation-duration: 8s;
         }
 
         .floating:nth-child(2) {
             left: 50%;
-            animation-duration: 6s;
+            animation-duration: 12s;
         }
 
         .floating:nth-child(3) {
             left: 70%;
-            animation-duration: 8s;
+            animation-duration: 12s;
         }
 
         @keyframes float {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(30px); }
             100% { transform: translateY(0); }
         }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -106,9 +164,33 @@
     <div class="floating"></div>
 
     <div class="container">
-        <h1>欢迎来到白板小工具</h1>
-        <p>简单、快捷、实用的工具</p>
-        <a href="lasted.exe" download class="download-button">下载最新版</a>
+        <div class="intro">
+            <h1>白板小工具</h1>
+            <h3>简单、快捷、实用、高效</h3>
+            <a href="lasted.exe" download class="download-button">下载最新版(暂无)</a>
+        </div>
+        
+        <div class="content">
+            <div class="box">
+                <h3>版本</h3>
+                <pre>尚未发行软件,暂无版本号</pre>
+            </div>
+            <div class="box">
+                <h3>公告</h3>
+                <pre>欢迎使用白板小工具！
+请注意，更新历史和公告将在此页面显示。
+更多信息，请关注本站。
+后续,我们会提供更多的功能,敬请期待。</pre>
+            </div>
+            <div class="box">
+                <h3>授权使用机构</h3>
+                <pre>尚无授权使用机构。</pre>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 白板小工具. 版权所有. Powered by mycbxzd & xzd.</p>
+        </div>
     </div>
 </body>
 </html>
